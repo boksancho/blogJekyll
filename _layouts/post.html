@@ -1,0 +1,21 @@
+---
+layout: wrapper
+---
+
+{% if page.title == "First Post" %}
+  This is the first post
+{% elsif page.title == "New post" %}
+  New post
+{% else %}
+  another post
+{% endif %}
+
+{% for post in site.posts %}
+<li><a style="{% if page.url == post.url %}color:red;{% endif %}" href="{{ post.url }}">{{ post.title }}</a></li><br />
+{% endfor %}
+
+
+<h2>{{ page.title }}</h2>
+<hr>
+
+{{ content }}
